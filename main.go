@@ -24,7 +24,7 @@ func main() {
 func findSQLTableNamesInBackticks(input string) ([]string, error) {
 	// SQL table names can start with a letter or _, optionally preceded by a $, followed by more letters, numbers, or underscores.
 	// This pattern reflects that convention.
-	pattern := "`(\\$[A-Za-z_][A-Za-z0-9_]*)`"
+	pattern := "(`\\$[A-Za-z_][A-Za-z0-9_]*`)"
 
 	// Compile the regular expression
 	tableNameRegex, err := regexp.Compile(pattern)
